@@ -1,0 +1,78 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url(./fonts/Ubuntu/Ubuntu-Medium.ttf);
+}
+
+:root {
+    --main-color: #022c22;
+}
+
+* {
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template: 1fr 3fr / 1fr 4fr;
+}
+
+nav {
+    background-color: rgb(92, 92, 243);
+    grid-area: 1 / 2 / span 1 / -1;
+}
+
+.sidebar {
+    grid-area: 1 / 1 / -1 / span 1;
+    display: grid;
+    grid-template-rows: 75px 250px 125px;
+    gap: 20px;
+    padding-left: 8px;
+    background-color: var(--main-color);
+    color: white;
+    font-family: 'Ubuntu', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.sidebar ul {
+    display: grid;
+    align-content: space-evenly;
+    height: 100%;
+    gap: 10px;
+}
+
+.sidebar li {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    place-items: center start;
+}
+
+.sidebar .title {
+    display: grid;
+    place-content: center start;
+    font-size: 1rem;
+}
+
+.sidebar li .image-wrapper {
+    display: grid;
+    place-content: center;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.sidebar li img {
+    width: 30px;
+    filter: invert(1);
+}
+
+.sidebar .title img {
+    width: 50px;
+}
+
+.main-content {
+    background-color: rgb(240, 74, 74);
+    grid-area: 2 / 2 / span 1 / span 1;
+}
