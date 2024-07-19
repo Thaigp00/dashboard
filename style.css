@@ -4,13 +4,17 @@
 }
 
 :root {
-    --main-color: #022c22;
+    /* --main-color: #022c22; */
+    --main-color: #4B0082;
+    --secondary-color-1: #fff;
+    --secondary-color-2: #e5e4e2;
 }
 
 * {
     box-sizing: content-box;
     padding: 0;
     margin: 0;
+    font-family: 'Ubuntu', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body {
@@ -19,9 +23,114 @@ body {
     grid-template: 1fr 3fr / 1fr 4fr;
 }
 
+img {
+    width: 30px;
+}
+
 nav {
-    background-color: rgb(92, 92, 243);
     grid-area: 1 / 2 / span 1 / -1;
+    display: grid;
+    grid-template-rows: 2fr 3fr;
+    background-color: var(--secondary-color-1);
+    padding: 0 32px;
+    box-shadow: 0 0 4px black;
+}
+
+.upper-nav {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    gap: 48px;
+}
+
+.search-bar-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: min-content 1fr;
+    place-content: center;
+    gap: 16px;
+}
+
+input[type='search'] {
+    width: 85%;
+    border: none;
+    border-radius: 16px;
+    background-color: var(--secondary-color-2);
+    padding-left: 24px;
+    font-weight: bold;
+}
+
+.user-part-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: min-content 1fr;
+    place-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.user-settings, .user-profile {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: min-content 1fr;
+    place-items: center start;
+    gap: 8px;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    width: 45px;
+
+    &.large {
+        width: 70px;
+    }
+}
+
+.lower-nav {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.greeting {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    gap: 16px;
+}
+
+.message {
+    display: grid;
+    gap: 4px;
+}
+
+.message p {
+    font-size: 0.75rem;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-content: center;
+    gap: 48px;
+}
+
+.buttons button {
+    padding: 10px;
+    border: none;
+    border-radius: 16px;
+    background-color: var(--main-color);
+    color: var(--secondary-color-1);
+    font-weight: bold;
+
+    &:hover {
+        cursor: pointer;
+        filter: brightness(1.1);
+    }
+
+    &:active {
+        filter: brightness(0.9);
+    }
 }
 
 .sidebar {
@@ -32,7 +141,6 @@ nav {
     padding-left: 8px;
     background-color: var(--main-color);
     color: white;
-    font-family: 'Ubuntu', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .sidebar ul {
@@ -64,7 +172,6 @@ nav {
 }
 
 .sidebar li img {
-    width: 30px;
     filter: invert(1);
 }
 
@@ -73,6 +180,7 @@ nav {
 }
 
 .main-content {
-    background-color: rgb(240, 74, 74);
+    background-color: rgb(53, 99, 55);
     grid-area: 2 / 2 / span 1 / span 1;
+    z-index: -1;
 }
